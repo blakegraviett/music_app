@@ -1,14 +1,14 @@
-<app-header></app-header>
+<app-header (pageSelector)="currPage = $event" ></app-header>
 <div class="container">
 
   <div class="row">
     <!-- ? Display Songs ? -->
-    <div class="col-md-6">
+    <div class="col-md-6" *ngIf="currPage === 'playlist'">
       <app-display-songs></app-display-songs>
       </div>
 
     <!-- ? Add Songs ? -->
-    <div class="col-md-6">
+    <div class="col-md-6" *ngIf="currPage === 'addSongs'">
       <app-add-songs></app-add-songs>
     </div>
   </div>
