@@ -1,0 +1,6 @@
+<div class="row"  *ngFor="let song of songs">
+  <div class="col-md-12" style="text-align: center;">
+    <h1>{{song.url}}</h1>
+    <iframe width="800" height="500" [src]="this.sanitizer.bypassSecurityTrustResourceUrl('//www.youtube.com/embed/'+song.url)"></iframe>
+</div>
+</div>
