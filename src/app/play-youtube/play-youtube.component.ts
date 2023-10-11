@@ -7,17 +7,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   selector: 'app-play-youtube',
   templateUrl: './play-youtube.component.html',
   styleUrls: ['./play-youtube.component.css'],
-  providers: [songsService]
 })
 export class PlayYoutubeComponent {
-  songs: Song[];
+   songs: Song[];
 
-  urlSafe: SafeResourceUrl;
-  url = '';
   constructor(private songsService: songsService, public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.songs = this.songsService.getSongs();
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl('');
   }
 }

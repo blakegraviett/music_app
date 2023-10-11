@@ -5,15 +5,11 @@ import { songsService } from '../shared/songs.service';
   selector: 'app-display-songs',
   templateUrl: './display-songs.component.html',
   styleUrls: ['./display-songs.component.css'],
-  providers: [songsService]
 })
 export class DisplaySongsComponent {
   songs: Song[];
-  song: Song;
 
-  constructor(private songsService: songsService) {
-
-  }
+  constructor(private songsService: songsService) {}
 
 
   ngOnInit() {

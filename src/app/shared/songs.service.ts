@@ -1,8 +1,12 @@
-import { EventEmitter } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { Song } from "./song.model"
 
+@Injectable({
+  providedIn: 'root',
+})
+
+
 export class songsService {
-  songSelected = new EventEmitter<Song>();
 
 private songs: Song[] =  [
   new Song('Snowflake', 'Powfu', "tell me your feelings and i won't tell you mine" ,

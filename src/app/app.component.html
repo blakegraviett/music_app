@@ -23,7 +23,7 @@
   <!-- ? Show YT Video ? -->
   <div class="row" *ngIf="currPage === 'youtube'">
     <div class="col-md-12">
-      <app-play-youtube></app-play-youtube>
+      <app-play-youtube [songDeatils]="songSelected"></app-play-youtube>
     </div>
   </div>
 </div>

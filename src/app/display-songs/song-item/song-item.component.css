@@ -1,0 +1,17 @@
+.clearfix {
+  background-color: #1db954;
+}
+.clearfix:hover {
+  background-color: #b3b3b3;
+}
+a {
+  color: #121212;
+}
+
+#songImg {
+  max-height: 80px;
+
+  box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+  -webkit-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+  -moz-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+}
