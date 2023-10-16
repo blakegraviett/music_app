@@ -1,6 +1,6 @@
 import { Component , Input} from '@angular/core';
 import { Song } from '../shared/song.model';
-import { songsService } from '../shared/songs.service';
+import { SongsService } from '../shared/songs.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
@@ -9,11 +9,12 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./play-youtube.component.css'],
 })
 export class PlayYoutubeComponent {
-   songs: Song[];
+  @Input() song: Song;
+  // songs: Song[];
 
-  constructor(private songsService: songsService, public sanitizer: DomSanitizer) { }
+  constructor(private songsService: SongsService, public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.songs = this.songsService.getSongs();
+
   }
 }

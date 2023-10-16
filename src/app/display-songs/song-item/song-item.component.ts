@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,} from '@angular/core';
 import { Song } from 'src/app/shared/song.model';
-import { songsService } from 'src/app/shared/songs.service';
+import { SongsService } from 'src/app/shared/songs.service';
 
 
 @Component({
@@ -11,7 +11,12 @@ import { songsService } from 'src/app/shared/songs.service';
 export class SongItemComponent {
   @Input() song: Song;
 
-  constructor( private songService: songsService){}
+  constructor( private songService: SongsService){}
+
+  onSlected() {
+    console.log(this.song);
+    this.songService.songSelected.emit(this.song);
+  }
 
 
 }

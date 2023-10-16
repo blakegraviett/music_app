@@ -6,7 +6,9 @@ import { Song } from "./song.model"
 })
 
 
-export class songsService {
+export class SongsService {
+  songSelected = new EventEmitter<Song>();
+
 
 private songs: Song[] =  [
   new Song('Snowflake', 'Powfu', "tell me your feelings and i won't tell you mine" ,

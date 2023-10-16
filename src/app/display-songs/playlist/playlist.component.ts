@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { songsService } from 'src/app/shared/songs.service';
+import { SongsService } from 'src/app/shared/songs.service';
 import { Song } from 'src/app/shared/song.model';
 @Component({
   selector: 'app-playlist',
@@ -9,7 +9,7 @@ import { Song } from 'src/app/shared/song.model';
 export class PlaylistComponent {
   songs: Song[];
 
-  constructor(private songsService: songsService) {}
+  constructor(private songsService: SongsService) {}
 
 
   ngOnInit() {
