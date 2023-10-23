@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { Song } from "./song.model"
-import { Subject } from "rxjs";
+import { Subject  } from "rxjs";
 
 @Injectable({
   providedIn: 'root',
@@ -26,4 +26,9 @@ getSongs() {
   return this.songs.slice();
 }
 
+getSongByTitle(title: string) {
+  const foundSong = this.songs.find((song) => song.title === title);
+
+  return foundSong;
+}
 }

@@ -15,7 +15,6 @@ export class SongItemComponent {
 
   onSlected() {
     this.songService.songSelected.next(this.song);
-    console.log(this.song);
   }
 
 
