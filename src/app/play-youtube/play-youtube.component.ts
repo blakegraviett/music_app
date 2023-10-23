@@ -22,11 +22,9 @@ export class PlayYoutubeComponent {
 
   ngOnInit() {
      this.newlySavedSong = this.songsService.songSelected.subscribe((song: Song) => {
-      console.log(song);
+      console.log(song.title);
+      this.songDetails = song;
      });
   }
 
-  ngOnDestroy() {
-    this.newlySavedSong.unsubscribe();
-  }
 }
