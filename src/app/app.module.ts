@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { DisplaySongsComponent } from './display-songs/display-songs.component';
@@ -20,7 +21,7 @@ import { PlaylistComponent } from './display-songs/playlist/playlist.component';
     PlaylistComponent ,
   ],
   imports: [
-    BrowserModule
+    BrowserModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

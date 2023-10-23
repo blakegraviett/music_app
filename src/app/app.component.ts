@@ -15,9 +15,7 @@ export class AppComponent {
   constructor(private songsService: SongsService) { }
 
 ngOnInit() {
-  return this.songsService.songSelected
-    .subscribe(
-      (song: Song) => {
+  return this.songsService.songSelected.subscribe((song: Song) => {
         this.selectedSong = song;
       }
     );

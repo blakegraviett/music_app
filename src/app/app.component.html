@@ -1,29 +1,10 @@
 <app-header (pageSelector)="currPage = $event" ></app-header>
 <div class="container">
 
-  <div class="row"*ngIf="currPage === 'playlist'">
+  <div class="row">
     <!-- ? Display Songs ? -->
     <div class="col-md-6">
-      <app-display-songs></app-display-songs>
+      <router-outlet></router-outlet>
       </div>
     </div>
 
-
-
-    <!-- ? Add Songs ? -->
-    <div class="row" *ngIf="currPage === 'addSongs'">
-    <div class="col-md-12">
-      <app-add-songs></app-add-songs>
-    </div>
-  </div>
-
-
-
-
-  <!-- ? Show YT Video ? -->
-  <div class="row" *ngIf="currPage === 'youtube'">
-    <div class="col-md-12">
-      <app-play-youtube [song]="selectedSong"></app-play-youtube>
-    </div>
-  </div>
-</div>

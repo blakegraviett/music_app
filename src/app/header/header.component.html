@@ -9,15 +9,15 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" id="navbar-brand" href="#">Playlist Maker</a>
+			<a class="navbar-brand" id="navbar-brand">Playlist Maker</a>
 		</div>
 
 		<!-- Collapsible Navbar -->
 		<div class="collapse navbar-collapse" id="example-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#" (click)="selectPageName('playlist')">Playlist</a> </li>
-				<li><a href="#" (click)="selectPageName('addSongs')"> Add Songs</a></li>
-				<li><a href="#" (click)="selectPageName('youtube')">Youtube</a></li>
+				<li><a style="cursor: pointer" routerLink="/playlist" routerLinkActive="active">Playlist</a> </li>
+				<li><a style="cursor: pointer" routerLink="/add-song" routerLinkActive="active">Add Songs</a></li>
+				<li><a style="cursor: pointer" routerLink="/youtube" routerLinkActive="active">Youtube</a></li>
 			</ul>
 		</div>
 
