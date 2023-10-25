@@ -13,8 +13,9 @@ export class SongItemComponent {
 
   constructor( private songService: SongsService){}
 
-  onSlected() {
-    this.songService.songSelected.next(this.song);
+  removeSong(title: string) {
+    this.songService.deleteSongByTitle(title);
+    console.log(title);
   }
 
 

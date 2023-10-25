@@ -8,10 +8,36 @@ a {
   color: #121212;
 }
 
+a:hover {
+  color: #121212;
+  transform: scale(1.05);
+}
+
 #songImg {
   max-height: 80px;
 
   box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
   -webkit-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
   -moz-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+}
+
+
+.minus {
+  position: absolute;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem;
+  color: #1db954;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.minus:hover {
+  transform: scale(2.5);
+  color: #b3b3b3;
+}
+element.style {
+  color: white ;
 }

@@ -1,37 +1,89 @@
 <div class="row">
-  <div class="col xs 12">
-    <form>
-      <div class="row">
-        <div class="col-md-6 form-group">
-          <label for="name">Song Name</label>
-          <input type="text" id="name" class="form-control" >
-        </div>
-        <div class="col-md-6 form-group">
-          <label for="amount">Artist Name</label>
-          <input type="text" id="artist" class="form-control">
-        </div>
-      </div>
+  <div class="col-md-12">
+    <form [formGroup]="addSongForm" (ngSubmit)="onSubmit()">
+
 
       <div class="row">
-      <div class="col-md-3 form-group">
-        <label for="amount">Album Name</label>
-        <input type="text" id="album" class="form-control">
-      </div>
-      <div class="col-md-3 form-group">
-        <label for="amount">Album Cover ImagePath</label>
-        <input type="text" id="album" class="form-control">
-      </div>
-    </div>
+        <div class="col-md-12 form-group">
+          <label for="title">Song Name</label>
+          <input
+          type="text"
+          name="title"
+          id="title"
+          formControlName="title"
+          >
+          <span class="error" *ngIf="addSongForm.get('title').touched && !addSongForm.get('title').valid">
+            Please enter a valid Song Name!
+          </span>
 
-    <div class="row">
-      <div class="col-md-6 form-group">
-        <label for="amount">Youtube URL</label>
-        <input type="text" id="yt" class="form-control">
-      </div>
-        <div class="col-md-6">
-          <button class="btn btn-success" type="button">Add</button>
+          <br>
+          <br>
+         <label for="artist">Artist Name</label>
+          <input
+          type="text"
+          name="artist"
+          id="artist"
+          formControlName="artist"
+          >
+          <span class="error" *ngIf="addSongForm.get('artist').touched && !addSongForm.get('artist').valid">
+            Please enter a valid Artist!
+          </span>
+
+          <br>
+          <br>
+
+         <label for="albumn">Albumn Name</label>
+          <input
+          type="text"
+          name="albumn"
+          id="albumn"
+          formControlName="albumn"
+          >
+          <span class="error" *ngIf="addSongForm.get('albumn').touched && !addSongForm.get('albumn').valid">
+            Please enter a valid Album Name!
+          </span>
+
+          <br>
+          <br>
+
+          <label for="imagePath">Album Cover ImagePath</label>
+          <input
+          type="text"
+          name="imagePath"
+          id="imagePath"
+          formControlName="imagePath"
+          >
+          <span class="error" *ngIf="addSongForm.get('imagePath').touched && !addSongForm.get('imagePath').valid">
+            Please enter a valid Image Path!
+          </span>
+
+          <br>
+          <br>
+
+          <label for="url">Youtube URL</label>
+          <input
+
+          type="text"
+          name="url"
+          id="url"
+          formControlName="url">
+
+          <span class="error" *ngIf="addSongForm.get('url').touched && !addSongForm.get('url').valid">
+            Please enter a valid YouTube URL!
+          </span>
+
+
+          <hr>
+          <button [disabled]="!addSongForm.valid" class="btn btn-success" type="submit">Add Song</button>
         </div>
     </div>
     </form>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <app-tutorial-photos></app-tutorial-photos>
   </div>
 </div>
