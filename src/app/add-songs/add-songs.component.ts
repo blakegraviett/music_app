@@ -24,6 +24,7 @@ export class AddSongsComponent {
 
     onSubmit() {
       this.songService.addSong(this.addSongForm)
+      this.addSongForm.reset();
     }
 
 }

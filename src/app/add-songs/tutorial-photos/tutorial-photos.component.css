@@ -2,10 +2,14 @@
   width: 500px;
   height: 200px;
   margin: auto;
-  top: 50%;
-  right: 50%;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: white;
   text-align: center;
+}
+
+img {
+  box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+  -webkit-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+  -moz-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
 }
