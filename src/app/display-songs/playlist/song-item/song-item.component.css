@@ -1,5 +1,9 @@
 .clearfix {
   background-color: #1db954;
+  color: black;
+}
+.list-group-item-heading {
+  color: white;
 }
 .clearfix:hover {
   background-color: #b3b3b3;

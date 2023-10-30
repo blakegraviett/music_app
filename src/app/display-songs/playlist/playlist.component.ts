@@ -17,11 +17,12 @@ export class PlaylistComponent {
   playlistOneTitle: String = 'Playlist One';
   playlistTwoTitle: String = 'Playlist Two';
 
-  playlistOneChange: Boolean = true;
+  playlistOneChange: Boolean = false;
   playlistTwoChange: Boolean = false;
 
   songsSubscription: Subscription;
   playlistSubscription: Subscription;
+
 
 
 
@@ -54,6 +55,7 @@ export class PlaylistComponent {
 
   ngOnDestroy() {
     this.songsSubscription.unsubscribe();
+    this.songsSubscription.unsubscribe();
   }
 
 
@@ -61,6 +63,7 @@ export class PlaylistComponent {
   onSubmitPlaylistOne() {
     this.playlistOneChange = false;
     this.playlistOneTitle = this.changePlaylistOneTitleForm.value.title;
+
 
     // * Local Storage Of Title 1
     localStorage.removeItem('playlistOneTitle');
@@ -82,6 +85,7 @@ export class PlaylistComponent {
   onSubmitPlaylistTwo() {
     this.playlistTwoChange = false;
     this.playlistTwoTitle = this.changePlaylistTwoTitleForm.value.title;
+
 
      // * Local Storage Of Title 2
      localStorage.removeItem('playlistTwoTitle');

@@ -75,8 +75,8 @@
 
 
           <hr>
-          <button [disabled]="!addSongForm.valid" class="btn btn-success playlistOne" type="submit" (click)="playlistOne()">Add to Playlist One</button>
-          <button [disabled]="!addSongForm.valid" id="playlistTwo" class="btn btn-success" type="submit" (click)="playlistTwo()">Add to Playlist Two</button>
+          <button [disabled]="!addSongForm.valid" class="btn btn-success playlistOne" type="submit" (click)="playlistOne()">Add to {{playlistOneTitle}} Playlist </button>
+          <button [disabled]="!addSongForm.valid" id="playlistTwo" class="btn btn-success" type="submit" (click)="playlistTwo()">Add to {{playlistTwoTitle}} Playlist</button>
         </div>
     </div>
     </form>

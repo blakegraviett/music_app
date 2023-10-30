@@ -12,4 +12,6 @@ img {
   box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
   -webkit-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
   -moz-box-shadow: 10px 10px 42px 0px rgba(0,0,0,0.82);
+  max-width: 100%;
+  height: auto;
 }

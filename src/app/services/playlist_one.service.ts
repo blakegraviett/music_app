@@ -12,8 +12,8 @@ export class SongsService {
 
 // * PLAYLIST 1
 songSelected = new Subject<Song>();
-
 playlistChanged = new Subject<Song[]>();
+
 
 private playlistOne: Song[] =  [
 
