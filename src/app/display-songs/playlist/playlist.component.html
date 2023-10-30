@@ -2,10 +2,11 @@
   <div class="displayCol col-md-6">
     <h1 class="playlistTitleOne">Your Playlist</h1>
     <hr>
-    <app-song-item *ngFor="let songEl of songs" [song]="songEl"></app-song-item>
+    <app-song-item *ngFor="let songEl of playlistOne" [song]="songEl"></app-song-item>
   </div>
   <div class="displayCol col-md-6">
-  <h1 class="playlistTitleOne">Your Playlist 2 /DEV</h1>
+  <h1 class="playlistTitleOne">Your Playlist 2</h1>
   <hr>
+  <app-song-item *ngFor="let songEl of playlistTwo" [song]="songEl"></app-song-item>
 </div>
 </div>

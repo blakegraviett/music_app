@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <h2 style="text-align: center; color: white;">Add Song To Playlist</h2>
+    <h2 style="text-align: center; color: white;">Add A Song To A Playlist</h2>
     <form [formGroup]="addSongForm" (ngSubmit)="onSubmit()">
 
 
@@ -14,7 +14,7 @@
           formControlName="title"
           >
           <span class="error" *ngIf="addSongForm.get('title').touched && !addSongForm.get('title').valid">
-            Please enter a valid Song Name!
+            Please enter a valid song name!
           </span>
 
           <br>
@@ -27,7 +27,7 @@
           formControlName="artist"
           >
           <span class="error" *ngIf="addSongForm.get('artist').touched && !addSongForm.get('artist').valid">
-            Please enter a valid Artist!
+            Please enter a valid artist!
           </span>
 
           <br>
@@ -41,7 +41,7 @@
           formControlName="albumn"
           >
           <span class="error" *ngIf="addSongForm.get('albumn').touched && !addSongForm.get('albumn').valid">
-            Please enter a valid Album Name!
+            Please enter a valid albumn name!
           </span>
 
           <br>
@@ -55,7 +55,7 @@
           formControlName="imagePath"
           >
           <span class="error" *ngIf="addSongForm.get('imagePath').touched && !addSongForm.get('imagePath').valid">
-            Please enter a valid Image Path!
+            Please enter a valid image path!
           </span>
 
           <br>
@@ -75,7 +75,8 @@
 
 
           <hr>
-          <button [disabled]="!addSongForm.valid" class="btn btn-success" type="submit">Add Song</button>
+          <button [disabled]="!addSongForm.valid" class="btn btn-success playlistOne" type="submit" (click)="playlistOne()">Add to Playlist One</button>
+          <button [disabled]="!addSongForm.valid" id="playlistTwo" class="btn btn-success" type="submit" (click)="playlistTwo()">Add to Playlist Two</button>
         </div>
     </div>
     </form>

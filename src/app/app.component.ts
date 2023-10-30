@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SongsService } from './shared/songs.service';
+import { SongsService } from './services/playlist_one.service';
 import { Song } from './shared/song.model';
+import { PlaylistTwoService } from './services/playlist_two.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,12 @@ export class AppComponent {
 
   selectedSong: Song;
 
-  constructor(private songsService: SongsService) { }
+  constructor(private songsService: SongsService, private playlistTwoService: PlaylistTwoService) { }
 
 ngOnInit() {
-  return this.songsService.songSelected.subscribe((song: Song) => {
-        this.selectedSong = song;
-      }
-    );
+    this.songsService.pullLocalStorage();
+    this.playlistTwoService.pullLocalStorage();
 }
+
+
 }

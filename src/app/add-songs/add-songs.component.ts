@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { SongsService } from '../shared/songs.service';
+import { SongsService } from '../services/playlist_one.service';
+import { PlaylistTwoService } from '../services/playlist_two.service';
 
 @Component({
   selector: 'app-add-songs',
@@ -19,12 +20,31 @@ export class AddSongsComponent {
 
     });
 
-    constructor( private songService: SongsService){}
+    constructor( private songService: SongsService, private playlistTwoService: PlaylistTwoService){}
+    playlist: Boolean;
+
+    playlistOne() {
+      this.playlist = true
+    }
+
+    playlistTwo() {
+      this.playlist = false
+    }
 
 
     onSubmit() {
-      this.songService.addSong(this.addSongForm)
+      if(this.playlist === true) {
+      this.songService.addSong(this.addSongForm);
+      this.songService.updateLocalStorage();
       this.addSongForm.reset();
+      }
+
+      if(this.playlist === false) {
+        this.playlistTwoService.addSong(this.addSongForm);
+        this.playlistTwoService.updateLocalStorage();
+        this.addSongForm.reset();
+      }
     }
+
 
 }

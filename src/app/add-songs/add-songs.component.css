@@ -5,13 +5,17 @@ input {
   height: 100%;
 }
 
+input:focus {
+  transform: scale(1.015);
+}
+
 label {
   font-size: larger;
   color: white;
 }
 
 button:hover {
-  transform: scale(1.25);
+  transform: scale(1.15);
   background-color: #b3b3b3;
 }
 form .ng-touched.ng-invalid {
@@ -21,4 +25,8 @@ form .ng-touched.ng-invalid {
 .error {
   opacity: 75%;
   color: red;
+}
+
+#playlistTwo {
+  margin-left: 1%;
 }

@@ -1,6 +1,7 @@
 import { Component, Input,} from '@angular/core';
 import { Song } from 'src/app/shared/song.model';
-import { SongsService } from 'src/app/shared/songs.service';
+import { SongsService } from 'src/app/services/playlist_one.service';
+import { PlaylistTwoService } from 'src/app/services/playlist_two.service';
 
 
 @Component({
@@ -11,11 +12,17 @@ import { SongsService } from 'src/app/shared/songs.service';
 export class SongItemComponent {
   @Input() song: Song;
 
-  constructor( private songService: SongsService){}
+  constructor( private songService: SongsService, private playlistTwoService: PlaylistTwoService){}
 
   removeSong(title: string) {
     this.songService.deleteSongByTitle(title);
-    console.log(title);
+    this.songService.updateLocalStorage();
+
+    this.playlistTwoService.deleteSongByTitle(title);
+    this.playlistTwoService.updateLocalStorage();
+
+
+
   }
 
 
