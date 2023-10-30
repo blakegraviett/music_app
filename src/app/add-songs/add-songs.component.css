@@ -15,7 +15,7 @@ label {
 }
 
 button:hover {
-  transform: scale(1.15);
+  transform: scale(1.10);
   background-color: #b3b3b3;
 }
 form .ng-touched.ng-invalid {

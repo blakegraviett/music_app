@@ -2,3 +2,38 @@
   color: white;
   text-align: center;
 }
+
+
+#playlistTitleDiv {
+  position: relative;
+}
+
+#ChangePlaylistBtn {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  margin-bottom: 2%;
+  font-size: 75%;
+  background-color: #1db954;
+}
+
+#ChangePlaylistBtn:hover {
+  background-color: #b3b3b3;
+}
+.btn-success {
+  position: absolute;
+  margin-left: 4%;
+}
+
+input{
+  color: white;
+  background-color: #1db954;
+  width: 60%;
+}
+#changePlaylistOneTitle {
+  position: absolute;
+  margin-bottom: 2%;
+  bottom: 0;
+  right: 0;
+}
+

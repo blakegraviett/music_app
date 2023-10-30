@@ -1,12 +1,43 @@
 <div class="row">
   <div class="displayCol col-md-6">
-    <h1 class="playlistTitleOne">Your Playlist</h1>
+    <div id="playlistTitleDiv">
+    <button id="ChangePlaylistBtn" (click)="this.playlistOneChange = !this.playlistOneChange">Change Title</button>
+    <h1 class="playlistTitleOne">{{ playlistOneTitle }}</h1>
+
+    <span *ngIf="playlistOneChange" id="changePlaylistOneTitle">
+      <form [formGroup]="changePlaylistOneTitleForm" (ngSubmit)="onSubmitPlaylistOne()">
+        <input  type="text"
+        name="title"
+        id="title"
+        formControlName="title">
+        <button class="btn-success" type="submit">Submit</button>
+      </form>
+    </span>
+
+
     <hr>
+  </div>
     <app-song-item *ngFor="let songEl of playlistOne" [song]="songEl"></app-song-item>
   </div>
   <div class="displayCol col-md-6">
-  <h1 class="playlistTitleOne">Your Playlist 2</h1>
-  <hr>
+    <div id="playlistTitleDiv">
+      <button id="ChangePlaylistBtn" (click)="this.playlistTwoChange = !this.playlistTwoChange">Change Title</button>
+      <h1 class="playlistTitleOne">{{ playlistTwoTitle }}</h1>
+
+
+    <span *ngIf="playlistTwoChange" id="changePlaylistOneTitle">
+      <form [formGroup]="changePlaylistTwoTitleForm" (ngSubmit)="onSubmitPlaylistTwo()">
+        <input  type="text"
+        name="title"
+        id="title"
+        formControlName="title">
+        <button class="btn-success" type="submit">Submit</button>
+      </form>
+    </span>
+
+
+      <hr>
+    </div>
   <app-song-item *ngFor="let songEl of playlistTwo" [song]="songEl"></app-song-item>
 </div>
 </div>
