@@ -4,6 +4,7 @@ import { Song } from 'src/app/shared/song.model';
 import { Subscription } from 'rxjs';
 import { PlaylistTwoService } from 'src/app/services/playlist_two.service';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-playlist',
@@ -44,11 +45,11 @@ export class PlaylistComponent {
 
     // * Pull Local Storage For Titles
     if(localStorage.getItem('playlistOneTitle' )!= null){
-      this.playlistOneTitle  = JSON.parse(localStorage.getItem('playlistOneTitle'))[0]
+      this.playlistOneTitle  = JSON.parse(localStorage.getItem('playlistOneTitle'))
     }
 
     if(localStorage.getItem('playlistTwoTitle' )!= null){
-      this.playlistTwoTitle  = JSON.parse(localStorage.getItem('playlistTwoTitle'))[0]
+      this.playlistTwoTitle  = JSON.parse(localStorage.getItem('playlistTwoTitle'))
     }
 
   }
@@ -101,5 +102,18 @@ export class PlaylistComponent {
 
 
      localStorage.setItem('playlistTwoTitle', JSON.stringify(oldData));
+  }
+
+
+  // * Test
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.playlistOne, event.previousIndex, event.currentIndex);
+    this.songsService.updateArray(this.playlistOne);
+    this.songsService.updateLocalStorage();
+  }
+  drop2(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.playlistTwo, event.previousIndex, event.currentIndex);
+    this.playlistTwoService.updateArray(this.playlistTwo);
+    this.playlistTwoService.updateLocalStorage();
   }
 }

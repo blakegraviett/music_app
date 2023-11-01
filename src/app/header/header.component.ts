@@ -14,8 +14,5 @@ export class HeaderComponent {
     this.pageSelector.emit(page);
   }
 
-  test() {
-    console.log(this.isShowing);
-  }
 
 }

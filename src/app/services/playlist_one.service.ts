@@ -41,6 +41,10 @@ addSong(song) {
   this.playlistChanged.next(this.playlistOne.slice());
 }
 
+updateArray(newArray) {
+  this.playlistOne =  newArray;
+}
+
 // * Local Storage
 
 updateLocalStorage() {

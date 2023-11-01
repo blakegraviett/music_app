@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="displayCol col-md-6">
+  <div cdkDropList class="displayCol col-md-6" (cdkDropListDropped)="drop($event)">
     <div id="playlistTitleDiv">
     <button id="ChangePlaylistBtn" (click)="this.playlistOneChange = !this.playlistOneChange">Change Title</button>
     <h1 class="playlistTitleOne">{{ playlistOneTitle }}</h1>
@@ -17,14 +17,13 @@
 
     <hr>
   </div>
-    <app-song-item *ngFor="let songEl of playlistOne" [song]="songEl"></app-song-item>
+    <app-song-item cdkDrag *ngFor="let songEl of playlistOne" [song]="songEl"></app-song-item>
   </div>
-  <div class="displayCol col-md-6">
+  <div cdkDropList class="displayCol col-md-6" (cdkDropListDropped)="drop2($event)">
     <div id="playlistTitleDiv">
       <button id="ChangePlaylistBtn" (click)="this.playlistTwoChange = !this.playlistTwoChange">Change Title</button>
+
       <h1 class="playlistTitleOne">{{ playlistTwoTitle }}</h1>
-
-
     <span *ngIf="playlistTwoChange" id="changePlaylistOneTitle">
       <form [formGroup]="changePlaylistTwoTitleForm" (ngSubmit)="onSubmitPlaylistTwo()">
         <input  type="text"
@@ -35,9 +34,8 @@
       </form>
     </span>
 
-
       <hr>
     </div>
-  <app-song-item *ngFor="let songEl of playlistTwo" [song]="songEl"></app-song-item>
+  <app-song-item cdkDrag *ngFor="let songEl of playlistTwo" [song]="songEl"></app-song-item>
 </div>
 </div>

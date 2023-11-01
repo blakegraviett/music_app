@@ -15,7 +15,7 @@ export class AddSongsComponent {
   playlistTwoTitleSubs: Subscription;
 
   playlistOneTitle: String ='';
-  playlistTwoTitle: String = ' ';
+  playlistTwoTitle: String = '';
 
   addSongForm = new FormGroup({
     title: new FormControl('', Validators.required),
@@ -30,12 +30,12 @@ export class AddSongsComponent {
 
     ngOnInit() {
       if(localStorage.getItem('playlistOneTitle' )!= null){
-        this.playlistOneTitle  = JSON.parse(localStorage.getItem('playlistOneTitle'))[0]
+        this.playlistOneTitle  = JSON.parse(localStorage.getItem('playlistOneTitle'))
       } else {
         this.playlistOneTitle = 'First';
       }
       if(localStorage.getItem('playlistTwoTitle' )!= null){
-        this.playlistTwoTitle  = JSON.parse(localStorage.getItem('playlistTwoTitle'))[0]
+        this.playlistTwoTitle  = JSON.parse(localStorage.getItem('playlistTwoTitle'))
       } else {
         this.playlistOneTitle = 'Second';
       }

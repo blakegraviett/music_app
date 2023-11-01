@@ -11,7 +11,7 @@ import { SongsService } from "./playlist_one.service";
 export class PlaylistTwoService {
 
 
-// * PLAYLIST 1
+// * PLAYLIST 2
 songSelected = new Subject<Song>();
 
 playlistChanged = new Subject<Song[]>();
@@ -40,6 +40,10 @@ addSong(song) {
   console.log(song)
   this.playlistTwo.push(song.value)
   this.playlistChanged.next(this.playlistTwo.slice());
+}
+
+updateArray(newArray) {
+  this.playlistTwo =  newArray;
 }
 
 // * Local Storage

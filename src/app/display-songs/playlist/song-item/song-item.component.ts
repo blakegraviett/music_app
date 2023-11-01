@@ -20,10 +20,8 @@ export class SongItemComponent {
 
     this.playlistTwoService.deleteSongByTitle(title);
     this.playlistTwoService.updateLocalStorage();
-
-
-
   }
+
 
 
 }

@@ -1,6 +1,7 @@
 .clearfix {
   background-color: #1db954;
   color: black;
+  cursor: move;
 }
 .list-group-item-heading {
   color: white;
