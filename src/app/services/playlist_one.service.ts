@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from "@angular/core";
-import { Song } from "../shared/song.model"
+import { Song } from "src/app/shared/song.model";
 import { Subject  } from "rxjs";
 import { PlaylistTwoService } from "./playlist_two.service";
 

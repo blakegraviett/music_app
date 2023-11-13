@@ -1,0 +1,62 @@
+
+input {
+  background-color: #1db954;
+  color: black;
+  width: 98%;
+  height: 25%;
+  margin-bottom: 2%;
+}
+
+
+input:focus {
+  transform: scale(1.015);
+}
+
+label {
+  text-align: center;
+  font-size: larger;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.10);
+  background-color: #b3b3b3;
+}
+form .ng-touched.ng-invalid {
+  border: 1px solid crimson;
+}
+
+.error {
+  opacity: 75%;
+  color: red;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+#signInDiv {
+  border: 5px solid #1db954;
+}
+#signInButton {
+  text-align: none;
+}
+
+a {
+position: absolute;
+bottom: 0;
+right: 0;
+margin-right: 5%;
+margin-bottom: 4.25%;
+color: #1db954;
+}
+
+a:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: #b3b3b3;
+  color: black;
+  border: 2px solid #1db954 ;
+}
+

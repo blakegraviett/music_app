@@ -12,6 +12,8 @@ import { PlaylistComponent } from './display-songs/playlist/playlist.component';
 import { TutorialPhotosComponent } from './add-songs/tutorial-photos/tutorial-photos.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { AuthComponent } from './auth/auth.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,11 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     PlayYoutubeComponent,
     SongItemComponent,
     PlaylistComponent,
-    TutorialPhotosComponent ,
+    TutorialPhotosComponent,
+    AuthComponent ,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, ReactiveFormsModule, DragDropModule
+    BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
