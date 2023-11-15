@@ -48,8 +48,18 @@ export class PlaylistComponent {
       this.playlistOneTitle  = JSON.parse(localStorage.getItem('playlistOneTitle'))
     }
 
+    // ? If local Storage of playlist one is a blank string make it say playlist one
+    if(localStorage.getItem('playlistOneTitle' ) == ''){
+      this.playlistOneTitle  = 'First'
+    }
+
     if(localStorage.getItem('playlistTwoTitle' )!= null){
       this.playlistTwoTitle  = JSON.parse(localStorage.getItem('playlistTwoTitle'))
+    }
+
+     // ? If local Storage of playlist two is a blank string make it say playlist one
+     if(localStorage.getItem('playlistTwoTitle' ) == ''){
+      this.playlistOneTitle  = 'Second'
     }
 
   }

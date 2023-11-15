@@ -31,13 +31,20 @@ export class AddSongsComponent {
     ngOnInit() {
       if(localStorage.getItem('playlistOneTitle' )!= null){
         this.playlistOneTitle  = JSON.parse(localStorage.getItem('playlistOneTitle'))
-      } else {
+      }
+       // ? If the playlist has no name make the button say First
+      if(localStorage.getItem('playlistOneTitle')[3] == ']') {
         this.playlistOneTitle = 'First';
       }
+
+
+
       if(localStorage.getItem('playlistTwoTitle' )!= null){
         this.playlistTwoTitle  = JSON.parse(localStorage.getItem('playlistTwoTitle'))
-      } else {
-        this.playlistOneTitle = 'Second';
+      }
+      // ? If the playlist has no name make the button say Second
+      if(localStorage.getItem('playlistTwoTitle')[3] == "]") {
+        this.playlistTwoTitle = 'Second';
       }
 
     }
